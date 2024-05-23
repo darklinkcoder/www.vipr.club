@@ -3,22 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vipr Club</title>
+    <title>My Creations</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Creations</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section>
+        <section class="hero">
+            <h1>Welcome to My Creations</h1>
+            <p>Explore my projects and creations.</p>
+        </section>
+        <section id="projects" class="projects-section">
             <h2>Projects</h2>
-            <ul class="project-list">
-                <li><a href="project1.html">Project 1: Basic 2D Shooter Game</a></li>
-                <li><a href="project2.html">Project 2: Basic 3D Unity Game</a></li>
-                <li><a href="project3.html">Project 3: Basic 2D Bouncing Ball Game</a></li>
-                <li><a href="project4.html">Project 4: Basic Tic Tack Toe</a></li>
-            </ul>
+            <div class="project-list">
+                <div class="project-item">
+                    <a href="project1.html">
+                        <img src="project1.jpg" alt="Project 1">
+                        <h3>Project 1: Art Gallery</h3>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project2.html">
+                        <img src="project2.jpg" alt="Project 2">
+                        <h3>Project 2: Code Snippets</h3>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project3.html">
+                        <img src="project3.jpg" alt="Project 3">
+                        <h3>Project 3: Photography</h3>
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="project4.html">
+                        <img src="project4.jpg" alt="Project 4">
+                        <h3>Project 4: Blog</h3>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
