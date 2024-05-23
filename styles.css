@@ -1,0 +1,59 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+main {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+}
+
+.project-list {
+    list-style-type: none;
+}
+
+.project-list li {
+    margin: 0.5rem 0;
+}
+
+.project-list a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.project-list a:hover {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #4CAF50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
