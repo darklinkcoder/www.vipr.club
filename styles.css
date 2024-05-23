@@ -73,9 +73,9 @@ h1 {
     background-color: #fff;
     border: 1px solid #e1e1e1;
     border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem;
     text-align: center;
-    width: 300px;
+    width: 250px;
     transition: box-shadow 0.3s ease;
 }
 
