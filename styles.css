@@ -1,127 +1,192 @@
-/* Basic Reset */
+
+/* Reset some default browser styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    background-color: #f5f5f7;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll caused by animations */
 }
 
 header {
-    background-color: #fff;
-    border-bottom: 1px solid #e1e1e1;
-    padding: 1rem 2rem;
-    text-align: center;
-}
-
-nav {
+    height: 100vh;
     display: flex;
     justify-content: center;
-    margin-bottom: 1rem;
-}
-
-.nav-list {
-    list-style-type: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-list li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-list li a:hover {
-    color: #0070c9;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero {
+    align-items: center;
+    background-color: #f4f4f4;
+    /* Placeholder background color */
     text-align: center;
-    padding: 2rem 1rem;
+    color: #333;
+    opacity: 0;
+    /* Start hidden for fade-in effect */
+    animation: fadeIn 1.2s ease-in-out forwards;
+    /* Extended fade-in duration */
 }
 
-.hero h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    /* No bolding, text stays normal */
+    transform: translateY(50px);
+    /* Start slightly off-screen (below) */
+    opacity: 0;
+    animation: slideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s forwards;
 }
 
 .hero p {
-    font-size: 1.25rem;
-    color: #666;
+    font-size: 24px;
+    margin-bottom: 50px;
+    transform: translateY(50px);
+    /* Start slightly off-screen (below) */
+    opacity: 0;
+    animation: slideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.6s forwards;
 }
 
-.projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 2rem 1rem;
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.project-item {
-    background-color: #fff;
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
-    padding: 1.5rem;
+section#projects {
+    padding: 50px;
     text-align: center;
-    width: 250px;
-    height: 250px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out 1.5s forwards;
+    /* Extended fade-in duration */
+}
+
+section#projects h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    transform: translateY(50px);
+    /* Start slightly off-screen */
+    opacity: 0;
+    animation: slideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) 1.5s forwards;
+}
+
+/* Project grid layout */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out 2s forwards;
+}
+
+.project-btn {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-.project-item a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.25rem;
-    font-weight: 500;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.project-item:hover {
+    background-color: #f4f4f4;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 300px;
+    /* Consistent height */
+    overflow: hidden;
+    /* Hide overflow to crop images */
+    transform: translateY(30px);
+    /* Start slightly off-screen */
+    opacity: 0;
+    animation: slideUp 1s cubic-bezier(0.25, 0.1, 0.25, 1) 2.2s forwards;
+    position: relative;
+    /* Ensure child elements are positioned correctly */
+    padding: 10px;
+    /* Add padding around the button content */
 }
 
-.project-item:hover a {
-    background-color: rgba(0, 0, 0, 0.8);
+.project-btn img {
+    width: 99%;
+    /* Reduced width to create a border effect */
+    height: 75%;
+    /* Height to occupy more space */
+    object-fit: cover;
+    /* Scale and crop image to cover the area */
+    transition: transform 0.3s ease;
+    /* Smooth scaling effect */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    /* Space between image and text */
+}
+
+.project-btn span {
+    display: block;
+    font-size: 20px;
+    padding: 10px;
+    /* Add padding around the text */
+    text-align: center;
+    /* Center the text */
+}
+
+.project-btn:hover {
+    transform: translateY(-10px) scale(1.05);
+    /* Pop-up and slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Increased shadow on hover */
+}
+
+.project-btn:hover img {
+    transform: scale(1.05);
+    /* Slightly enlarge image on hover */
 }
 
 footer {
+    padding: 20px;
     text-align: center;
-    padding: 1rem 0;
-    background-color: #fff;
-    border-top: 1px solid #e1e1e1;
-    margin-top: 2rem;
-    flex-shrink: 0;
+    background-color: #333;
+    color: white;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-in-out 2.5s forwards;
+}
+
+/* Fade-in and slide-up keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
